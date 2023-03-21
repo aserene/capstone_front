@@ -1,7 +1,11 @@
 <template>
-    <h1>
-        Pocket Journal
-    </h1>
+    <div class="header">
+        <h1>
+            Pocket Journal
+        </h1>
+        <router-link to="/">Home</router-link>
+        <router-link to="/newentry">New Journal Entry</router-link>
+    </div>
 </template>
 
 <script>
