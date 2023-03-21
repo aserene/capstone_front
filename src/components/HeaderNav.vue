@@ -4,7 +4,7 @@
             Pocket Journal
         </h1>
         <router-link to="/">Home</router-link>
-        <router-link to="/newentry">New Journal Entry</router-link>
+        <router-link to="/new">New Journal Entry</router-link>
     </div>
 </template>
 

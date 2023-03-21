@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import ShowView from '../views/ShowView.vue'
+import NewView from '../views/NewView.vue'
 
 Vue.use(VueRouter)
 
@@ -11,14 +13,14 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/viewentry',
-    name: 'viewentry',
-    component: () => import('../views/ShowView.vue')
+    path: '/view/:id',
+    name: 'view',
+    component: ShowView
   },
   {
-    path: '/newentry',
-    name: 'newentry',
-    component: () => import('../views/NewView.vue')
+    path: '/new',
+    name: 'new',
+    component: NewView
   }
 ]
 
