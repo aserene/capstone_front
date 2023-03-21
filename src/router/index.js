@@ -15,7 +15,8 @@ const routes = [
   {
     path: '/view/:id',
     name: 'view',
-    component: ShowView
+    component: ShowView,
+    props: true,
   },
   {
     path: '/new',

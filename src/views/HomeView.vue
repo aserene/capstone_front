@@ -5,8 +5,12 @@
     </h1>
     <ul>
       <li v-for="entry of entries" v-bind:key="entry.id">
-      {{entry.date}}
-      {{entry.title}}
+        <router-link :to="{ name: 'view', params: {id: entry.id}}">
+          {{entry.date}}
+        </router-link>
+        <router-link :to="{ name: 'view', params: {id: entry.id}}">
+          {{entry.title}}
+        </router-link>
       </li>
     </ul>
   </div>
@@ -17,6 +21,7 @@
 
 export default {
   name: 'HomeView',
+  props: ['id'],
   data: function(){
     return {
       entries: []
