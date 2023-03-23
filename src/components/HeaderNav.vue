@@ -13,10 +13,3 @@ export default {
     name: 'HeaderNav'
 }
 </script>
-
-<style>
-nav{
-    width: 85%;
-    margin: 5px auto;
-}
-</style>

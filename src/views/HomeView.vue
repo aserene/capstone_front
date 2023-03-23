@@ -6,19 +6,15 @@
     <ul>
       <li v-for="entry of entries" v-bind:key="entry.id">
         <router-link :to="{ name: 'view', params: {id: entry.id}}">
-          {{entry.date}}
+          {{`${entry.date} ${entry.title}`}}
         </router-link>
-        <router-link :to="{ name: 'view', params: {id: entry.id}}">
-          {{entry.title}}
-        </router-link>
+        <button v-bind:id="entry.id" @click="deleteEntry">Delete</button>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
 export default {
   name: 'HomeView',
   props: ['id'],
@@ -28,7 +24,11 @@ export default {
     }
   },
   created: function(){
-    const URL = "https://pocket-journal.onrender.com/journal"
+    this.getEntries();
+  },
+  methods: {
+    getEntries: function(){
+      const URL = "https://pocket-journal.onrender.com/journal"
     fetch(URL, {
       method: 'get',
     })
@@ -36,6 +36,17 @@ export default {
     .then(data => {
       this.entries = data
     })
+    },
+    deleteEntry: function(event){
+      const id = event.target.id
+      const URL = "https://pocket-journal.onrender.com/journal"
+      fetch(`${URL}/${id}`, {
+        method: 'delete',
+      })
+      .then(()=>{
+        this.getEntries()
+      })
+    }
   }
 }
 </script>
