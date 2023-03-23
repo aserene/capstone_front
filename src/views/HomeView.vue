@@ -29,7 +29,7 @@ export default {
   methods: {
     getEntries: function(){
       const URL = "https://pocket-journal.onrender.com/journal"
-    fetch(URL, {
+    fetch(`${URL}/`, {
       method: 'get',
     })
     .then(response => response.json())

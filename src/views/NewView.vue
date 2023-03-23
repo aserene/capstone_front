@@ -32,8 +32,8 @@ export default {
     },
     methods: {
     newEntry: function(request){
-        const URL = "https://pocket-journal.onrender.com/journal/"
-        fetch(URL, {
+        const URL = "https://pocket-journal.onrender.com/journal"
+        fetch(`${URL}/`, {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
