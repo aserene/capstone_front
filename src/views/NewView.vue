@@ -1,18 +1,18 @@
 <template>
   <div class="journal-entry">
-    <h1>
-        This is gonna be where you can create a new journal entry.
-    </h1>
-    <h2>
-        Form goes here
-    </h2>
-    <form v-on:submit.prevent="newEntry(formData)">
-        <label for="date">Date:</label>
-        <input type="date" value="Date" v-model="formData.date" required >
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" v-model="formData.title" required><br/>
-        <textarea id="body" name="textarea" v-model="formData.body" rows="10" cols="20" required></textarea>
-        <button type="submit" >Save</button>
+    <form class="p-4" v-on:submit.prevent="newEntry(formData)">
+        <div class="flex justify-evenly m-3">
+            <div>
+                <label for="date">Date:  </label>
+                <input class="border border-black rounded-md" type="date" value="Date" v-model="formData.date" required >
+            </div>
+            <div>
+                <label for="title">Title:</label>
+                <input class="border-b border-black" type="text" id="title" name="title" v-model="formData.title" required>
+            </div>
+        </div>
+        <textarea class="border border-black w-4/5" id="body" name="textarea" v-model="formData.body" rows="10" cols="20" required></textarea><br/>
+        <button class="border w-1/6 rounded-md border-blue-400 border-2 text-blue-400 font-serif hover:bg-blue-400 hover:text-white duration-300" type="submit" >Save</button>
     </form>
   </div>
 </template>
